@@ -14,6 +14,7 @@ export default function () {
     initialData: [],
   });
 
+  console.log("Home");
   if (loading) {
     return <CircularProgress />;
   }

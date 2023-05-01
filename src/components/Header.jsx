@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
@@ -13,7 +13,7 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import BookIcon from "@mui/icons-material/Book";
-import { useAuthContext } from "../contexts/auth/Authcontext";
+import { AuthContext, useAuthcontext } from "../contexts/auth/Authcontext";
 import { NavLink, useNavigate } from "react-router-dom";
 
 const pages = [
@@ -29,7 +29,8 @@ const pages = [
 ];
 
 export function Header() {
-  const { user, logout } = useAuthContext();
+  console.log("context is", useAuthcontext);
+  const { user, logout } = useContext(AuthContext);
 
   const navigate = useNavigate();
 
