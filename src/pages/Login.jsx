@@ -1,11 +1,11 @@
 import { Box, Typography, Link, TextField, Button, Alert } from "@mui/material";
 import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useAuthContext } from "../contexts/auth/Authcontext";
+import { useAuthcontext } from "../contexts/auth/Authcontext";
 import { useForm } from "../hooks/useForm";
 
 export default function () {
-  const { user, login } = useAuthContext();
+  const { user, login } = useAuthcontext();
   const navigate = useNavigate();
   const { formValues, registerField } = useForm({
     email: "",
